@@ -1,0 +1,568 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --green: #477a5b;
+  --green-dark: #315b40;
+  --green-light: #eaf3e9;
+  --text: #26362c;
+  --muted: #7b887e;
+  --border: #e8ede7;
+  --white: #ffffff;
+  --bg: #f7f9f5;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+}
+
+button, input, select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 235px minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: var(--white);
+  border-right: 1px solid var(--border);
+  padding: 32px 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand {
+  color: var(--green-dark);
+  text-decoration: none;
+  font-family: "Manrope", sans-serif;
+  font-size: 23px;
+  font-weight: 800;
+  margin-bottom: 54px;
+}
+
+.nav-label, .eyebrow {
+  font-size: 10px;
+  letter-spacing: 1.7px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.nav-label {
+  margin-bottom: 15px;
+}
+
+.nav-link {
+  color: var(--green-dark);
+  background: var(--green-light);
+  padding: 13px;
+  border-radius: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.sidebar-note {
+  margin-top: auto;
+  background: #f2f6ed;
+  border-radius: 15px;
+  padding: 19px;
+}
+
+.sidebar-note span {
+  font-size: 27px;
+}
+
+.sidebar-note h3 {
+  font-family: "Manrope", sans-serif;
+  font-size: 15px;
+  margin: 12px 0 7px;
+}
+
+.sidebar-note p, .sidebar-footer {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.sidebar-footer {
+  margin-top: 22px;
+}
+
+.main-content {
+  max-width: 1250px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 36px 42px;
+}
+
+.topbar, .section-heading, .week-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.topbar {
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  margin-bottom: 9px;
+}
+
+h1, h2, h3 {
+  font-family: "Manrope", sans-serif;
+}
+
+h1 {
+  font-size: clamp(26px, 3vw, 34px);
+  letter-spacing: -1px;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 7px;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  background: var(--green-light);
+  color: var(--green-dark);
+  border-radius: 50%;
+  font-weight: 800;
+}
+
+.welcome {
+  background: linear-gradient(115deg, #e5f0df, #f3f5e9);
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.welcome h2 {
+  font-size: clamp(21px, 3vw, 28px);
+  letter-spacing: -0.8px;
+  margin-bottom: 9px;
+}
+
+.welcome p:last-child {
+  color: #657967;
+  font-size: 13px;
+}
+
+.welcome-emoji {
+  font-size: 53px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 17px;
+  margin-bottom: 34px;
+}
+
+.stat-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 21px;
+  min-width: 0;
+}
+
+.stat-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  background: var(--green-light);
+  border-radius: 11px;
+  font-size: 19px;
+  margin-bottom: 14px;
+}
+
+.stat-card > p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.stat-card h2 {
+  font-size: 27px;
+  margin: 7px 0;
+  overflow-wrap: anywhere;
+}
+
+.stat-card small {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.progress-track {
+  height: 6px;
+  border-radius: 20px;
+  background: #edf0eb;
+  overflow: hidden;
+  margin: 12px 0 8px;
+}
+
+.progress-fill {
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--green);
+  transition: width 0.3s ease;
+}
+
+.habits-section {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 27px;
+}
+
+.section-heading h2 {
+  font-size: 21px;
+}
+
+.primary-btn, .secondary-btn {
+  border: 0;
+  border-radius: 9px;
+  padding: 11px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: transform 0.15s, background 0.15s;
+}
+
+.primary-btn {
+  background: var(--green);
+  color: white;
+}
+
+.primary-btn:hover {
+  background: var(--green-dark);
+  transform: translateY(-1px);
+}
+
+.secondary-btn {
+  background: #f0f3ee;
+  color: var(--text);
+}
+
+.habit-form {
+  background: #f8faf6;
+  border: 1px solid var(--border);
+  padding: 20px;
+  border-radius: 13px;
+  margin: 23px 0;
+  display: grid;
+  gap: 10px;
+}
+
+.habit-form label {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.habit-form input, .habit-form select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dfe6dc;
+  border-radius: 8px;
+  background: white;
+  color: var(--text);
+  outline: none;
+}
+
+.habit-form input:focus, .habit-form select:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px #477a5b20;
+}
+
+.form-actions {
+  display: flex;
+  gap: 9px;
+  margin-top: 7px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.week-heading {
+  margin: 30px 0 18px;
+}
+
+.week-heading h3 {
+  font-size: 15px;
+}
+
+.week-heading .muted {
+  margin: 0;
+  font-size: 11px;
+}
+
+.week-header, .habit-row {
+  display: grid;
+  grid-template-columns: minmax(120px, 1fr) minmax(190px, 2fr) 58px;
+  align-items: center;
+  gap: 12px;
+}
+
+.week-header {
+  padding: 0 12px 13px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.week-days, .day-cells {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 5px;
+  text-align: center;
+}
+
+.week-day {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+}
+
+.week-day.today {
+  color: var(--green-dark);
+  font-weight: 800;
+}
+
+.day-letter {
+  font-size: 10px;
+}
+
+.day-number {
+  font-size: 11px;
+}
+
+.habit-row {
+  padding: 16px 12px;
+  border-top: 1px solid var(--border);
+}
+
+.habit-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.habit-icon {
+  width: 39px;
+  height: 39px;
+  background: #f0f5ec;
+  border-radius: 11px;
+  display: grid;
+  place-items: center;
+  font-size: 19px;
+  flex-shrink: 0;
+}
+
+.habit-name {
+  font-size: 12px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.habit-subtitle {
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 4px;
+}
+
+.day-toggle {
+  width: 27px;
+  height: 27px;
+  border: 1px solid #dce4d9;
+  border-radius: 9px;
+  background: white;
+  color: white;
+  font-size: 13px;
+  margin: auto;
+  display: grid;
+  place-items: center;
+}
+
+.day-toggle.done {
+  background: var(--green);
+  border-color: var(--green);
+}
+
+.day-toggle:focus-visible, button:focus-visible {
+  outline: 3px solid #8bb99a;
+  outline-offset: 3px;
+}
+
+.delete-btn {
+  border: 0;
+  background: transparent;
+  color: #a1aaa1;
+  font-size: 19px;
+  border-radius: 7px;
+}
+
+.delete-btn:hover {
+  color: #c64e4e;
+  background: #fff0f0;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 15px;
+}
+
+.empty-state span {
+  font-size: 42px;
+}
+
+.empty-state h3 {
+  margin: 12px 0 7px;
+  font-size: 17px;
+}
+
+.empty-state p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 11px;
+  padding: 25px 0 8px;
+}
+
+@media (max-width: 850px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    padding: 18px 22px;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .brand {
+    margin-bottom: 15px;
+  }
+
+  .nav-label, .sidebar-note, .sidebar-footer {
+    display: none;
+  }
+
+  .nav-link {
+    align-self: flex-start;
+  }
+
+  .main-content {
+    padding: 28px 22px;
+  }
+}
+
+@media (max-width: 580px) {
+  .main-content {
+    padding: 22px 12px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 16px;
+  }
+
+  .stat-card h2 {
+    font-size: 23px;
+  }
+
+  .welcome {
+    padding: 22px 18px;
+  }
+
+  .welcome-emoji {
+    font-size: 36px;
+  }
+
+  .habits-section {
+    padding: 17px 10px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .week-header, .habit-row {
+    grid-template-columns: minmax(85px, 1fr) minmax(150px, 2fr) 25px;
+    gap: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .week-days, .day-cells {
+    gap: 2px;
+  }
+
+  .habit-info {
+    gap: 6px;
+  }
+
+  .habit-icon {
+    width: 29px;
+    height: 29px;
+    font-size: 15px;
+  }
+
+  .habit-name {
+    font-size: 10px;
+  }
+
+  .habit-subtitle, .action-label {
+    display: none;
+  }
+
+  .day-toggle {
+    width: 23px;
+    height: 23px;
+    border-radius: 7px;
+  }
+
+  .week-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+}

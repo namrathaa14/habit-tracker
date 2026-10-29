@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HabitFlow | Habit Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <a class="brand" href="#">✳ HabitFlow</a>
+      <p class="nav-label">MENU</p>
+      <a class="nav-link active" href="#dashboard">▦ &nbsp; Dashboard</a>
+      <div class="sidebar-note">
+        <span>🌱</span>
+        <h3>Small steps matter.</h3>
+        <p>Build better habits, one day at a time.</p>
+      </div>
+      <p class="sidebar-footer">Your personal growth space</p>
+    </aside>
+
+    <main id="dashboard" class="main-content">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">YOUR PERSONAL SPACE</p>
+          <h1>Habit Tracker</h1>
+          <p id="today-date" class="muted"></p>
+        </div>
+        <div class="avatar">H</div>
+      </header>
+
+      <section class="welcome">
+        <div>
+          <p class="eyebrow">A NEW DAY, A NEW CHANCE</p>
+          <h2>Make today count. ✨</h2>
+          <p>Consistency beats perfection. Keep showing up!</p>
+        </div>
+        <div class="welcome-emoji">🌿</div>
+      </section>
+
+      <section class="stats-grid">
+        <article class="stat-card">
+          <span class="stat-icon">🎯</span>
+          <p>Today's progress</p>
+          <h2 id="progress-number">0%</h2>
+          <div class="progress-track">
+            <div id="progress-bar" class="progress-fill"></div>
+          </div>
+          <small id="progress-caption">Let's get started!</small>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-icon">✅</span>
+          <p>Habits completed</p>
+          <h2 id="completed-count">0 / 0</h2>
+          <small>Completed today</small>
+        </article>
+
+        <article class="stat-card">
+          <span class="stat-icon">🔥</span>
+          <p>Best current streak</p>
+          <h2 id="streak-count">0 days</h2>
+          <small>Consecutive days</small>
+        </article>
+      </section>
+
+      <section class="habits-section">
+        <div class="section-heading">
+          <div>
+            <h2>My daily habits</h2>
+            <p class="muted">Track your progress throughout the week.</p>
+          </div>
+          <button id="show-form-btn" class="primary-btn">+ Add habit</button>
+        </div>
+
+        <form id="habit-form" class="habit-form hidden">
+          <label for="habit-name">Habit name</label>
+          <input id="habit-name" type="text"
+            placeholder="e.g. Read for 20 minutes"
+            maxlength="60" required>
+
+          <label for="habit-icon">Choose an icon</label>
+          <select id="habit-icon">
+            <option value="📚">📚 Reading</option>
+            <option value="🏃">🏃 Exercise</option>
+            <option value="💧">💧 Drink water</option>
+            <option value="🧘">🧘 Meditation</option>
+            <option value="✍️">✍️ Journaling</option>
+            <option value="🌱">🌱 Personal growth</option>
+            <option value="😴">😴 Sleep routine</option>
+            <option value="🎯">🎯 Other goal</option>
+          </select>
+
+          <div class="form-actions">
+            <button type="submit" class="primary-btn">Save habit</button>
+            <button type="button" id="cancel-btn" class="secondary-btn">
+              Cancel
+            </button>
+          </div>
+        </form>
+
+        <div class="week-heading">
+          <h3>This week</h3>
+          <p class="muted">Tap a circle to update a day.</p>
+        </div>
+
+        <div class="week-header">
+          <span class="habit-column-label">Habit</span>
+          <div id="week-days" class="week-days"></div>
+          <span class="action-label">Action</span>
+        </div>
+
+        <div id="habit-list"></div>
+        <div id="empty-state" class="empty-state">
+          <span>🌻</span>
+          <h3>Your journey starts here</h3>
+          <p>Add your first habit and start building a better routine.</p>
+          <button id="empty-add-btn" class="primary-btn">Create a habit</button>
+        </div>
+      </section>
+
+      <footer>
+        Made with care, one habit at a time. 🌱
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
